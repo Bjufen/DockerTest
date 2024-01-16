@@ -8,8 +8,7 @@ services:
       - db
     environment:
       - SENDER_EMAIL=codecrafterss2@gmail.com
-      - SENDER_PASSWORD=frjz fiaj ixmv sbjq # password only works for Yusuf, if you want to test it, please let me know and I will create a password for you!
-
+      - SENDER_PASSWORD=njmr vfjv izoj okhg
   db:
     image: mysql:latest
     ports:
