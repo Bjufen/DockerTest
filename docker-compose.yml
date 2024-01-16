@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  app:
+    image: bjufen/backendapi:latest
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    environment:
+      - SENDER_EMAIL=codecrafterss2@gmail.com
+      - SENDER_PASSWORD=frjz fiaj ixmv sbjq # password only works for Yusuf, if you want to test it, please let me know and I will create a password for you!
+
+  db:
+    image: mysql:latest
+    ports:
+      - "32000:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root_pw
+      MYSQL_DATABASE: gs1_db
+      MYSQL_USER: gs1_user
+      MYSQL_PASSWORD: user_pw
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
